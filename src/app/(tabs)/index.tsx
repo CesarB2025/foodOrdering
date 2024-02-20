@@ -4,12 +4,22 @@ import products from '../../../assets/data/products';
 
 const product = products[1];
 
-export default function TabOneScreen() {
+const ProductionListItem = (props) => {
+  console.log(props);
   return (
     <View style={styles.container}>
       <Image source = {{uri: product.image}} style= {styles.image}/>
       <Text style = {styles.title }>{product.name}</Text>
       <Text style = {styles.prices}>${product.price}</Text>
+    </View>
+  )
+}
+
+export default function MenuScreen() {
+  return (
+    <View>
+      <ProductionListItem product={products[0]}/>
+      <ProductionListItem product={products[1]}/>
     </View>
   );
 }
